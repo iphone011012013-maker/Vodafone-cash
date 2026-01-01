@@ -436,6 +436,215 @@
         .tab { flex: 1; padding: 12px; cursor: pointer; text-align: center; font-weight: 700; color: #777; border-radius: 12px; transition: all 0.3s; }
         .tab.active { background: white; color: var(--primary-color); box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
 
+/* =========================
+   FAWRY BRAND VARIABLES
+========================= */
+:root {
+    --fawry-yellow: #ffc107;
+    --fawry-blue: #005eb8;
+}
+
+/* =========================
+   FAWRY BUTTON (MENU ITEM)
+========================= */
+.menu-item.fawry-special {
+    border: 1px solid #f3e7b3;
+    grid-column: span 2;
+}
+
+.menu-item.fawry-special .icon-wrapper {
+    background: var(--fawry-yellow);
+    box-shadow: 0 6px 15px rgba(255, 193, 7, 0.45);
+}
+
+.menu-item.fawry-special .icon-wrapper i {
+    color: var(--fawry-blue);
+    font-size: 22px;
+}
+
+.menu-item.fawry-special:hover {
+    border-color: var(--fawry-yellow);
+    transform: translateY(-4px);
+}
+
+/* =========================
+   FAWRY MODAL BASE
+========================= */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(6px);
+    z-index: 3000;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+@media (min-width: 480px) {
+    .modal {
+        align-items: center;
+    }
+}
+
+.modal-content {
+    background: #fff;
+    width: 100%;
+    max-width: 450px;
+    border-radius: 25px 25px 0 0;
+    padding: 25px;
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.3);
+    animation: fawrySlideUp 0.4s ease;
+}
+
+@media (min-width: 480px) {
+    .modal-content {
+        border-radius: 25px;
+        animation: fawryPop 0.3s ease;
+    }
+}
+
+/* =========================
+   FAWRY HEADER
+========================= */
+.fawry-header {
+    background: var(--fawry-blue);
+    color: #fff;
+    margin: -25px -25px 20px;
+    padding: 18px;
+    border-radius: 25px 25px 0 0;
+    text-align: center;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 4px solid var(--fawry-yellow);
+}
+
+.fawry-header h3 {
+    margin: 0;
+    font-size: 1.3em;
+    font-weight: 800;
+}
+
+.fawry-logo-circle {
+    width: 40px;
+    height: 40px;
+    background: var(--fawry-yellow);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--fawry-blue);
+    font-size: 1.2em;
+}
+
+/* =========================
+   FAWRY TABLE
+========================= */
+.codes-table-container {
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid #eee;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+    margin-bottom: 15px;
+}
+
+.codes-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95em;
+}
+
+.codes-table th {
+    background: #f5f5f5;
+    font-weight: 800;
+    padding: 12px;
+    text-align: center;
+    border-bottom: 2px solid #ddd;
+}
+
+.codes-table td {
+    padding: 12px;
+    text-align: center;
+    font-weight: 700;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+/* =========================
+   ROW COLORS
+========================= */
+.row-orange {
+    background: rgba(255, 121, 0, 0.06);
+}
+.row-orange td:first-child {
+    color: #ff7900;
+}
+
+.row-vodafone {
+    background: rgba(230, 0, 0, 0.06);
+}
+.row-vodafone td:first-child {
+    color: #e60000;
+}
+
+.row-etisalat {
+    background: rgba(127, 176, 56, 0.06);
+}
+.row-etisalat td:first-child {
+    color: #7fb038;
+}
+
+.row-we {
+    background: rgba(90, 40, 125, 0.06);
+}
+.row-we td:first-child {
+    color: #5a287d;
+}
+
+/* =========================
+   CLOSE BUTTON
+========================= */
+.btn-close {
+    width: 100%;
+    border: none;
+    background: #eee;
+    padding: 14px;
+    border-radius: 14px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.btn-close:hover {
+    background: #e0e0e0;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+@keyframes fawrySlideUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fawryPop {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
         /* Animations */
         @keyframes slideUp { from { transform: translateY(60px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
         @keyframes slideUpModal { from { transform: translateY(100%); } to { transform: translateY(0); } }
@@ -523,6 +732,14 @@
                 <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
             </div>
             <span>تقارير الخدمة</span>
+        </a>
+
+        <!-- Fawry Machines Button -->
+        <a href="#" class="menu-item fawry-special" onclick="openFawryModal(event)">
+            <div class="icon-wrapper">
+                <i class="fas fa-cash-register"></i>
+            </div>
+            <span>فوري ماكينات</span>
         </a>
     </div>
 
@@ -639,6 +856,60 @@
             <button class="btn-secondary" onclick="closeModal('servicesModal')">إغلاق</button>
         </div>
     </div>
+
+<!-- FAWRY CODES MODAL -->
+<div id="fawryModal" class="modal">
+    <div class="modal-content">
+        <div class="fawry-header">
+            <div class="fawry-logo-circle">
+                <i class="fas fa-star"></i>
+            </div>
+            <h3>أكواد ماكينات فوري</h3>
+        </div>
+
+        <div class="codes-table-container">
+            <table class="codes-table">
+                <thead>
+                    <tr>
+                        <th>المحفظة</th>
+                        <th>كود السحب</th>
+                        <th>كود الإيداع</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="row-orange">
+                        <td>أورنج كاش</td>
+                        <td>357</td>
+                        <td>353</td>
+                    </tr>
+                    <tr class="row-vodafone">
+                        <td>فودافون كاش</td>
+                        <td>207</td>
+                        <td>204</td>
+                    </tr>
+                    <tr class="row-etisalat">
+                        <td>اتصالات كاش</td>
+                        <td>4432</td>
+                        <td>4430</td>
+                    </tr>
+                    <tr class="row-we">
+                        <td>وي باي (WE)</td>
+                        <td>44250</td>
+                        <td>44240</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p style="font-size:0.85em; color:#777; text-align:center; margin-bottom:15px;">
+            * يرجى إعطاء التاجر الكود المطلوب لتنفيذ العملية على الماكينة.
+        </p>
+
+        <button class="btn-close" onclick="closeModal('fawryModal')">
+            إغلاق النافذة
+        </button>
+    </div>
+</div>
 
     <script>
         // --- Data Layer ---
@@ -882,6 +1153,13 @@
             }
         }
     </script>
+
+<script>
+function openFawryModal(e) {
+    if (e) e.preventDefault();
+    document.getElementById('fawryModal').style.display = 'flex';
+}
+</script>
 </body>
 </html>
 
